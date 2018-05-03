@@ -1,7 +1,16 @@
 <template>
   <div id="app">
+    <p>{{ $route.name}}  </p>
     <img src="./assets/logo.png">
-    <router-view/>
+    <p>导航
+      <router-link to="/">首页</router-link>
+      <router-link to="/hi/198/jspang websit is very good">hi页面</router-link>
+      <router-link :to="{name:'hi1',params:{username:'jspang',id:888}}">hi子页面</router-link>
+    </p>
+
+    <router-view></router-view>
+    <router-view name="leftPage" style="float:left;width: 50%;height: 300px;background:pink;"></router-view>
+    <router-view name="rightPage" style="float:right;width: 50%;height: 300px;background:deepskyblue"></router-view>
   </div>
 </template>
 
